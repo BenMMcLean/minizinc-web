@@ -30,7 +30,7 @@ class SolveController(Resource):
         if result.status not in [minizinc.Status.SATISFIED, minizinc.Status.ALL_SOLUTIONS, minizinc.Status.OPTIMAL_SOLUTION]:
             return {'status': result.status.name}, 400
 
-        return {'status': result.status.name, 'result': json.loads(json.dumps(result.solution))}
+        return {'status': result.status.name, 'result': json.loads(json.dumps(result.solution.__dict__))}
 
 
 solver_bp = Blueprint('solver', __name__)
