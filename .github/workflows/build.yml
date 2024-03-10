@@ -2,7 +2,7 @@ name: Build
 
 on:
   push:
-    branches: [ master, develop ]
+    branches: [ main, develop ]
   workflow_dispatch:
 
 jobs:
@@ -45,7 +45,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           tag_name: v${{ needs.version.outputs.version }}
-          release_name: lemmymod-${{ needs.version.outputs.version }}
+          release_name: minizinc-web-${{ needs.version.outputs.version }}
           draft: false
           prerelease: ${{ github.ref == 'refs/heads/develop' }}
       - name: Create Backend ZIP deployment package
