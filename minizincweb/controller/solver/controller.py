@@ -5,7 +5,7 @@ from flask import request, Blueprint
 from flask_restful import Resource, Api
 
 from .input_model import RequestSchema
-from solver.data.minizinc_service import MiniZincService
+from minizincweb.data.minizinc_service import MiniZincService
 
 
 class SolveController(Resource):
@@ -35,4 +35,4 @@ class SolveController(Resource):
 
 solver_bp = Blueprint('solver', __name__)
 api = Api(solver_bp)
-api.add_resource(SolveController, '/solver')
+api.add_resource(SolveController, '/solve')

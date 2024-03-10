@@ -1,6 +1,6 @@
 from flask import Flask
 
-from solver import solver_bp
+from minizincweb import solver_bp
 
 application = app = Flask(__name__)
 
