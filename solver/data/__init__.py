@@ -1,0 +1,1 @@
+from .minizinc_service import MiniZincService
